@@ -26,18 +26,7 @@ class Queue {
     this.length = 0;
   }
   getUnderlyingList() {
-    const Queue = {};
-    if (this.length === 0) {
-      return {};
-    }
-    let current = this.head;
-    while (current.next) {
-      Queue.value = current.value;
-      Queue.next = current.next;
-    }
-    Queue.value = current.value;
-    Queue.next = current.next;
-    return Queue;
+    return this.head;
   }
 
   enqueue(value) {
@@ -74,5 +63,6 @@ queue.enqueue(6);
 queue.enqueue(7); // returns the top element from queue and deletes it, returns 1
 // returns { value: 3, next: null }
 console.log(queue.dequeue());
-console.log(queue.dequeue());
-// console.log(queue.getUnderlyingList());
+// console.log(queue.dequeue());
+
+console.log(queue.getUnderlyingList());
